@@ -1,0 +1,50 @@
+<section class="section" id="about">
+  <span class="section-label">About Me</span>
+  <h2 class="section-title">Passionate about building <span class="gradient-text">digital experiences</span></h2>
+  
+  <div class="about-grid">
+    <div class="about-text">
+      <p>
+        <!-- TODO: Replace with your own about text -->
+        I'm a full-stack developer with 3+ years of experience building web applications
+        that are fast, accessible, and beautiful. I specialize in Angular, React, Node.js,
+        and cloud technologies.
+      </p>
+      <p>
+        When I'm not coding, you can find me exploring new technologies, contributing to
+        open-source projects, or writing about software development. I'm always looking for
+        new opportunities to grow and make an impact.
+      </p>
+      <div class="about-info">
+        <div class="info-item">
+          <span class="info-label">Name</span>
+          <span class="info-value">Adarsh <!-- TODO: Your full name --></span>
+        </div>
+        <div class="info-item">
+          <span class="info-label">Email</span>
+          <span class="info-value">your.email&#64;example.com</span>
+        </div>
+        <div class="info-item">
+          <span class="info-label">Location</span>
+          <span class="info-value">Your City, Country <!-- TODO --></span>
+        </div>
+        <div class="info-item">
+          <span class="info-label">Availability</span>
+          <span class="info-value available">Open to opportunities</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="about-highlights">
+      @for (item of highlights; track item.title) {
+        <div class="highlight-card">
+          <span class="highlight-icon">{{ item.icon }}</span>
+          <div>
+            <h3>{{ item.title }}</h3>
+            <p>{{ item.description }}</p>
+          </div>
+        </div>
+      }
+    </div>
+  </div>
+</section>

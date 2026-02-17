@@ -1,0 +1,27 @@
+<footer class="footer">
+  <div class="footer-container">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <a href="#" class="footer-logo">
+          <span class="logo-bracket">&lt;</span>
+          <span class="logo-name">Adarsh</span>
+          <span class="logo-bracket">/&gt;</span>
+        </a>
+        <p>Building digital experiences with passion and precision.</p>
+      </div>
+      <nav class="footer-nav">
+        <h4>Quick Links</h4>
+        <ul>
+          @for (link of footerLinks; track link.label) {
+            <li><a [href]="link.href">{{ link.label }}</a></li>
+          }
+        </ul>
+      </nav>
+    </div>
+    <div class="footer-divider"></div>
+    <div class="footer-bottom">
+      <p>&copy; {{ currentYear }} Adarsh. All rights reserved.</p>
+      <p class="footer-credit">Built with Angular &amp; ❤️</p>
+    </div>
+  </div>
+</footer>

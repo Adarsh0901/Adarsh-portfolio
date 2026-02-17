@@ -1,0 +1,23 @@
+services:
+  portfolio:
+    build: .
+    container_name: portfolio-app
+    restart: unless-stopped
+    ports:
+      - "80:80"
+      - "443:443"
+    volumes:
+      - certbot-webroot:/var/www/certbot:ro
+      - certbot-certs:/etc/nginx/ssl:ro
+
+  certbot:
+    image: certbot/certbot
+    container_name: portfolio-certbot
+    volumes:
+      - certbot-webroot:/var/www/certbot
+      - certbot-certs:/etc/nginx/ssl
+    entrypoint: "/bin/sh -c 'trap exit TERM; while :; do certbot renew; sleep 12h & wait $${!}; done;'"
+
+volumes:
+  certbot-webroot:
+  certbot-certs:

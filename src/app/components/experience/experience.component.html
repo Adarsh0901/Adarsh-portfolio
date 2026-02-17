@@ -1,0 +1,35 @@
+<section class="section" id="experience">
+  <span class="section-label">Experience</span>
+  <h2 class="section-title">Where I've <span class="gradient-text">worked</span></h2>
+  <p class="section-subtitle"><!-- TODO: Replace --> My professional journey so far.</p>
+
+  <div class="timeline">
+    @for (exp of experiences; track exp.period; let i = $index) {
+      <div class="timeline-item" [class.current]="exp.current">
+        <div class="timeline-marker">
+          <div class="marker-dot"></div>
+          @if (i < experiences.length - 1) {
+            <div class="marker-line"></div>
+          }
+        </div>
+        <div class="timeline-content">
+          <div class="timeline-header">
+            <div>
+              <h3>{{ exp.role }}</h3>
+              <p class="company">{{ exp.company }}</p>
+            </div>
+            <span class="period" [class.current-badge]="exp.current">
+              {{ exp.period }}
+            </span>
+          </div>
+          <p class="timeline-description">{{ exp.description }}</p>
+          <ul class="achievements">
+            @for (achievement of exp.achievements; track achievement) {
+              <li>{{ achievement }}</li>
+            }
+          </ul>
+        </div>
+      </div>
+    }
+  </div>
+</section>

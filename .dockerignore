@@ -1,0 +1,9 @@
+node_modules
+dist
+.git
+.angular
+.vscode
+*.md
+*.log
+.gitignore
+.editorconfig
