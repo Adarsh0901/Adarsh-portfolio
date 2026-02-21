@@ -80,7 +80,7 @@ ng version
 
 ```bash
 git clone <your-repo-url>
-cd cursorTry
+cd <your-repo-url>
 ```
 
 ### 2. Install Dependencies
@@ -234,25 +234,6 @@ docker run -d --name portfolio-app -p 8090:8090 portfolio-app
 
 ---
 
-## Customization
-
-All sections have **placeholder content** marked with `<!-- TODO -->` comments. Here's where to update:
-
-| What to Change       | File                                              |
-| -------------------- | ------------------------------------------------- |
-| Name & title         | `src/app/components/hero/hero.component.html`     |
-| Bio & stats          | `src/app/components/hero/hero.component.html`     |
-| About text & info    | `src/app/components/about/about.component.html`   |
-| Skills & levels      | `src/app/components/skills/skills.component.ts`   |
-| Projects             | `src/app/components/projects/projects.component.ts` |
-| Work experience      | `src/app/components/experience/experience.component.ts` |
-| Contact info & links | `src/app/components/contact/contact.component.html` |
-| Social media URLs    | `src/app/components/contact/contact.component.ts` |
-| Page title           | `src/index.html`                                  |
-| Navbar logo name     | `src/app/components/navbar/navbar.component.html` |
-| Footer name          | `src/app/components/footer/footer.component.html` |
-
----
 
 ## HTTPS / SSL Setup
 
