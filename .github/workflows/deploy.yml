@@ -27,5 +27,5 @@ jobs:
             echo "pwd: $(pwd)"
             git pull
             docker rm -f portfolio-app
-            docker compose up -d
+            docker compose up -d --build
             echo "Deployment completed!"
