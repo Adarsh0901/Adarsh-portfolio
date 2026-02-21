@@ -8,9 +8,9 @@ import { Component } from '@angular/core';
 })
 export class ContactComponent {
   socialLinks = [
-    { name: 'GitHub', url: 'https://github.com/yourusername', icon: 'github' },
-    { name: 'LinkedIn', url: 'https://linkedin.com/in/yourusername', icon: 'linkedin' },
-    { name: 'Twitter', url: 'https://twitter.com/yourusername', icon: 'twitter' },
-    { name: 'Email', url: 'mailto:your.email@example.com', icon: 'email' },
+    { name: 'GitHub', url: 'https://github.com/Adarsh0901', icon: 'github' },
+    { name: 'LinkedIn', url: 'https://www.linkedin.com/in/adarsh-shukla-6537a31b4/', icon: 'linkedin' },
+    { name: 'X', url: 'https://x.com/AdarshS25416821', icon: 'X' },
+    { name: 'Email', url: 'mailto:adarsshuklaworkspace@gmail.com', icon: 'email' },
   ];
 }

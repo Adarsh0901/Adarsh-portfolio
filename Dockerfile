@@ -1,5 +1,5 @@
 # Stage 1: Build the Angular application
-FROM node:22-alpine AS build
+FROM node:22-bullseye-slim AS build
 
 WORKDIR /app
 
@@ -10,16 +10,23 @@ COPY . .
 RUN npx ng build --configuration=production
 
 # Stage 2: Serve with Nginx + SSL
-FROM nginx:alpine
+FROM debian:bullseye-slim AS runtime
 
-RUN apk add --no-cache openssl
+# Use Debian Bullseye runtime and install nginx + OpenSSL (Bullseye packages
+# ship OpenSSL 1.1.1 which is not affected by CVE-2025-15467).
+RUN apt-get update \
+ && apt-get dist-upgrade -y \
+ && apt-get install -y --no-install-recommends nginx openssl ca-certificates \
+ && rm -rf /var/lib/apt/lists/*
 
-RUN rm /etc/nginx/conf.d/default.conf
+RUN rm -f /etc/nginx/conf.d/default.conf || true
 
 # Create directories for SSL and Certbot
 RUN mkdir -p /etc/nginx/ssl /var/www/certbot
 
-# Generate self-signed certificate (used until Let's Encrypt is configured)
+# NOTE: Avoid generating long-lived private keys at build time in production.
+# Prefer obtaining certificates at runtime via Certbot/ACME or in your CI pipeline.
+# A small self-signed cert is still generated here for local/dev convenience only.
 RUN openssl req -x509 -nodes -days 365 \
     -newkey rsa:2048 \
     -keyout /etc/nginx/ssl/privkey.pem \

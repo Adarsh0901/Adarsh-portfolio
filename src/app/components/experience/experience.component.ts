@@ -18,9 +18,9 @@ interface Experience {
 export class ExperienceComponent {
   experiences: Experience[] = [
     {
-      role: 'Senior Frontend Developer',
-      company: 'Company Name — TODO',
-      period: '2023 — Present',
+      role: 'Application Engineer',
+      company: 'Remiges Technologies PVT LTD',
+      period: '2022 — Present',
       description: 'Leading frontend development for the main product, working with Angular and TypeScript.',
       achievements: [
         'Led migration from AngularJS to Angular 17, improving performance by 40%',
@@ -31,8 +31,8 @@ export class ExperienceComponent {
     },
     {
       role: 'Full Stack Developer',
-      company: 'Company Name — TODO',
-      period: '2022 — 2023',
+      company: 'INSNAPSYS',
+      period: '2022 — 2022',
       description: 'Built and maintained web applications for enterprise clients.',
       achievements: [
         'Developed RESTful APIs serving 100K+ daily requests',
@@ -40,18 +40,6 @@ export class ExperienceComponent {
         'Integrated third-party payment and analytics services',
       ],
       current: false,
-    },
-    {
-      role: 'Junior Developer',
-      company: 'Company Name — TODO',
-      period: '2021 — 2022',
-      description: 'Started my professional journey building web interfaces and learning best practices.',
-      achievements: [
-        'Built responsive UIs for 10+ client projects',
-        'Introduced automated testing, achieving 80% code coverage',
-        'Contributed to internal component library',
-      ],
-      current: false,
-    },
+    }
   ];
 }
