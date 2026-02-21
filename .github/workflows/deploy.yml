@@ -26,4 +26,5 @@ jobs:
             cd /${{ secrets.SERVER_USER }}/portfolio/Adarsh-portfolio
             git pull
             docker rm -f portfolio-app
+            docker rm -f portfolio-certbot
             docker compose up -d --build
