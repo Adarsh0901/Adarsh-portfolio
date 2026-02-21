@@ -26,5 +26,6 @@ jobs:
             cd /${{ secrets.SERVER_USER }}/adarsh/cursorTry
             echo "pwd: $(pwd)"
             git pull
+            docker rm -f portfolio-app
             docker compose up -d --build
             echo "Deployment completed!"
